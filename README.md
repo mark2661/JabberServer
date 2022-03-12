@@ -1,5 +1,5 @@
 # JabberServer
-Back-end server for "Jabber" a Twitter clone designed for a university project.
+A multithreaded back-end server for "Jabber" a Twitter clone designed for a university project. This server has been designed to be compatible with the client side desktop application "JabberClient".
 ## What I Learned
 * Databse Design using [PostgreSQL](https://www.postgresql.org/)
 * API Development using Java Database Connectivity
