@@ -1,5 +1,5 @@
 # JabberServer
-Back-end server for "Jabber" a Twitter clone designed for a univeristy project.
+Back-end server for "Jabber" a Twitter clone designed for a university project.
 ## What I Learned
 * Databse Design using [PostgreSQL](https://www.postgresql.org/)
 * API Development using Java Database Connectivity
