@@ -9,25 +9,9 @@ import java.io.IOException;
 
 /**
  * 
- * @author iankenny
- * The JabberDatabase class. Formerly known as 'JabberServer'.
+ * @author Mark Cartwright Jr - 1697422.
  */
 public class JabberDatabase {
-	
-//	private static String dbcommand = "jdbc:postgresql://127.0.0.1:5432/postgres";
-//	private static String db = "postgres";
-//	private static String pw = "password"; //Password has been changed.
-//
-//	private Connection conn;
-//
-//	/**
-//	 * Returns the current database connection.
-//	 * @return the database connection.
-//	 */
-//	public Connection getConnection() {
-//		return conn;
-//	}
-
 	private static String dbcommand = "jdbc:postgresql://127.0.0.1:5432/postgres";
 	private static String db = "postgres";
 	private static String pw = "password"; //Remove when finished
@@ -43,28 +27,6 @@ public class JabberDatabase {
 	 * @param userid the userid of the user.
 	 * @return a list of the userids of users following the user.
 	 */
-//	public ArrayList<String> getFollowerUserIDs(int userid) {
-//
-//		ArrayList<String> ret = new ArrayList<String>();
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("select userida from follows where useridb = ?");
-//
-//			stmt.setInt(1, userid);
-//
-//			ResultSet rs = stmt.executeQuery();
-//
-//			while (rs.next()) {
-//				ret.add(rs.getObject("userida").toString());
-//			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//
-//		return ret;
-//	}
 	public ArrayList<String> getFollowerUserIDs(int userid) {
 		ArrayList<String> followers = new ArrayList<>();
 
@@ -93,29 +55,6 @@ public class JabberDatabase {
 	 * @param userid The userid of the user.
 	 * @return a list of the userids of users being followed by the user.
 	 */
-//	public ArrayList<String> getFollowingUserIDs(int userid) {
-//
-//		ArrayList<String> ret = new ArrayList<String>();
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("select useridb from follows where userida = ?");
-//
-//			stmt.setInt(1, userid);
-//
-//			ResultSet rs = stmt.executeQuery();
-//
-//			while (rs.next()) {
-//				ret.add(rs.getObject("useridb").toString());
-//			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//
-//		return ret;
-//	}
-
 	public ArrayList<String> getFollowingUserIDs(int userid) {
 		ArrayList<String> following = new ArrayList<>();
 
@@ -143,30 +82,6 @@ public class JabberDatabase {
 	 * This method returns a list of pairs of users who follow each other. Each pair is only listed once.
 	 * @return a list of 'mutual' follows, i.e. users who follow each other.
 	 */
-//	public ArrayList<ArrayList<String>> getMutualFollowUserIDs() {
-//
-//		ArrayList<ArrayList<String>> ret = new ArrayList<ArrayList<String>>();
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("select f1.userida, f1.useridb from follows f1 inner join follows f2 on f1.userida = f2.useridb and f1.useridb = f2.userida");
-//
-//			ResultSet rs = stmt.executeQuery();
-//
-//			while (rs.next()) {
-//				ArrayList<String> r = new ArrayList<String>();
-//				r.add(rs.getObject("userida").toString());
-//				r.add(rs.getObject("useridb").toString());
-//				ret.add(r);
-//			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//
-//		return removeDuplicates(ret);
-//	}
-
 	public ArrayList<ArrayList<String>> getMutualFollowUserIDs() {
 		ArrayList<ArrayList<String>> mutualFollowersSet = new ArrayList<>();
 		ArrayList<String> mutualFollowerPair;
@@ -229,31 +144,6 @@ public class JabberDatabase {
 	 * @param userid the userid of the user.
 	 * @return a list of [username, jabtext] pairs of the jabs liked by the user.
 	 */
-//	public ArrayList<ArrayList<String>> getLikesOfUser(int userid) {
-//
-//		ArrayList<ArrayList<String>> ret = new ArrayList<ArrayList<String>>();
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("select username, jabtext from jab natural join jabberuser where jabid in (select jabid from likes where userid = ?)");
-//
-//			stmt.setInt(1, userid);
-//
-//			ResultSet rs = stmt.executeQuery();
-//
-//			while (rs.next()) {
-//				ArrayList<String> r = new ArrayList<String>();
-//				r.add(rs.getObject("username").toString());
-//				r.add(rs.getObject("jabtext").toString());
-//				ret.add(r);
-//			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//
-//		return ret;
-//	}
 	public ArrayList<ArrayList<String>> getLikesOfUser(int userid) {
 		ArrayList<ArrayList<String>> likedMessages = new ArrayList<>();
 		ArrayList<String> message;
@@ -389,26 +279,6 @@ public class JabberDatabase {
 	 * @param username the username of the user.
 	 * @param jabtext the text of the jab.
 	 */
-//	public void addJab(String username, String jabtext) {
-//
-//		int userid = getUserID(username);
-//
-//		int jabid = getNextJabID();
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("insert into jab (values (?,?,?));");
-//
-//			stmt.setInt(1,  jabid);
-//			stmt.setInt(2,  userid);
-//			stmt.setString(3,  jabtext);
-//
-//			stmt.executeUpdate();
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 	public void addJab(String username, String jabtext) {
 		int newJabID = getNewJabID();
 		try{
@@ -440,26 +310,6 @@ public class JabberDatabase {
 	 * @param username the username of the new user.
 	 * @param emailadd the email address of the new user.
 	 */
-//	public void addUser(String username, String emailadd) {
-//
-//		int newid = getNextUserID();
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("insert into jabberuser (values(?,?,?))");
-//
-//			stmt.setInt(1, newid);
-//			stmt.setString(2, username);
-//			stmt.setString(3, emailadd);
-//
-//			stmt.executeUpdate();
-//
-//			addFollower(newid, newid);
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 	public void addUser(String username, String emailadd) {
 		int newUserID = getNewUserID();
 		try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO jabberuser VALUES(?,?,?)")) {
@@ -480,21 +330,6 @@ public class JabberDatabase {
 	 * @param userida the user who is doing the following.
 	 * @param useridb the user being followed.
 	 */
-//	public void addFollower(int userida, int useridb) {
-//
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("insert into follows (values(?,?))");
-//
-//			stmt.setInt(1, userida);
-//			stmt.setInt(2, useridb);
-//
-//			stmt.executeUpdate();
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 	public void addFollower(int userida, int useridb) {
 
 		try(PreparedStatement stmt = conn.prepareStatement("INSERT INTO follows VALUES(?,?)")){
@@ -540,20 +375,6 @@ public class JabberDatabase {
 	 * @param userid the user.
 	 * @param jabid the jab.
 	 */
-//	public void addLike(int userid, int jabid) {
-//		try {
-//
-//			PreparedStatement stmt = conn.prepareStatement("insert into likes (values(?,?))");
-//
-//			stmt.setInt(1, userid);
-//			stmt.setInt(2, jabid);
-//
-//			stmt.executeUpdate();
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 	public void addLike(int userid, int jabid) {
 		try(PreparedStatement stmt = conn.prepareStatement("INSERT INTO likes VALUES(?,?)")){
 			stmt.setInt(1,userid);
@@ -570,28 +391,6 @@ public class JabberDatabase {
 	 * This method returns a list of users with the most followers.
 	 * @return a list of the users with the most followers.
 	 */
-//	public ArrayList<String> getUsersWithMostFollowers() {
-//
-//		ArrayList<String> ret = new ArrayList<String>();
-//
-//		String query = "select useridb from follows group by useridb having count (useridb) >= all (select count(useridb) from follows group by useridb order by count(useridb));";
-//
-//		try {
-//
-//			PreparedStatement pstmt = conn.prepareStatement(query);
-//
-//			ResultSet rs = pstmt.executeQuery();
-//
-//			while (rs.next()) {
-//				ret.add(rs.getObject("useridb").toString());
-//			}
-//
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//
-//		return ret;
-//	}
 	public ArrayList<String> getUsersWithMostFollowers() {
 		ArrayList<String> mostFollowedUsers = new ArrayList<>();
 
