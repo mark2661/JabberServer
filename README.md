@@ -16,7 +16,7 @@ A multithreaded back-end server for "Jabber" a Twitter clone designed for a univ
 ```Java
 JabberServer/src/com/bham/fsd/assignments/jabberserver/StartServer.java //Server will listen for request on port 44444
 ```
-### Enter a new user name to register (or an existing user name to sign-in)
+### Enter a new username to register (or an existing user name to sign-in)
 |   |  |
 | ------------- | ------------- |
 | ![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/sign-in%20screen.PNG)  |![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/register%20success.PNG) |
