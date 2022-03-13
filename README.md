@@ -14,5 +14,6 @@ A multithreaded back-end server for "Jabber" a Twitter clone designed for a univ
 * Users timeline will automatically update when a followed users post "Jabs" (tweet equivalent) or like the posts of a mutually followed user.
 ## Example Usage (Using the JabberClient desktop application)
 ```Java
+JabberServer/src/com/bham/fsd/assignments/jabberserver/StartServer.java
 ```
 ## Future Updates
