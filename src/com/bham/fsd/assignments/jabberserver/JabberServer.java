@@ -30,6 +30,14 @@ public class JabberServer implements Runnable{
     return !this.serverSocket.isClosed();
   }
 
+  public void closeServer(){
+    try {
+      this.serverSocket.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
   @Override
   public void run(){
     while (true){

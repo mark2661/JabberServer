@@ -3,9 +3,7 @@ package TestingFiles;
 import com.bham.fsd.assignments.jabberserver.JabberDatabase;
 import com.bham.fsd.assignments.jabberserver.JabberMessage;
 import com.bham.fsd.assignments.jabberserver.JabberServer;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -26,19 +24,39 @@ import static org.junit.jupiter.api.Assertions.*;
 class JabberServerTest {
 
   private static com.bham.fsd.assignments.jabberserver.JabberDatabase database;
+  public JabberServer testServer = null;
 
 
+//  public static void init() {
+//    try{
+//      //JabberServer testServer = new JabberServer();
+////      database = new JabberDatabase();
+////      database.resetDatabase();
+//
+//    } catch(Exception e){
+//      e.printStackTrace();
+//    }
+//
+//  }
 
-  public static void init() {
+  @BeforeEach
+  void init(){
     try{
-      //JabberServer testServer = new JabberServer();
-//      database = new JabberDatabase();
-//      database.resetDatabase();
+      this.testServer = new JabberServer();
+      if(this.testServer.isConnected()){System.out.println("connected");}
+      database = new JabberDatabase();
+      database.resetDatabase();
+      System.out.println("db reset");
 
     } catch(Exception e){
       e.printStackTrace();
     }
+  }
 
+  @AfterEach
+  void teardown(){
+    this.testServer.closeServer();
+    this.testServer = null;
   }
 
 
