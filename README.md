@@ -14,6 +14,19 @@ A multithreaded back-end server for "Jabber" a Twitter clone designed for a univ
 * Users timeline will automatically update when a followed users post "Jabs" (tweet equivalent) or like the posts of a mutually followed user.
 ## Example Usage (Using the JabberClient desktop application)
 ```Java
-JabberServer/src/com/bham/fsd/assignments/jabberserver/StartServer.java
+JabberServer/src/com/bham/fsd/assignments/jabberserver/StartServer.java //Server will listen for request on port 44444
 ```
+### Enter a new username to register (or an existing user name to sign-in)
+|   |  |
+| ------------- | ------------- |
+| ![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/sign-in%20screen.PNG)  |![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/register%20success.PNG) |
+|   |  |
+
+
+### Post a message  for your followers to see
+![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/post.PNG)
+### Follow other users (click the "plus" icon next to their name)
+![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/follow.PNG)
+### Like your friends timeline posts (click the "heart" icon)
+![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/like.PNG)
 ## Future Updates
