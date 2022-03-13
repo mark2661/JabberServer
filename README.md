@@ -19,7 +19,7 @@ JabberServer/src/com/bham/fsd/assignments/jabberserver/StartServer.java //Server
 ### Enter a new username to register (or an existing user name to sign-in)
 |   |  |
 | ------------- | ------------- |
-| ![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/sign-in%20screen.PNG)  |![alt text]() |
+| ![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/sign-in%20screen.PNG)  |![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/register%20success.PNG) |
 |   |  |
 
 
