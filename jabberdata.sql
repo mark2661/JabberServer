@@ -1,5 +1,5 @@
 insert into jabberuser (
-    values (0, 'donaldJtrump', 'donald@donald.com'),
+    values (0, 'batman', 'darkKnight@gotham.com'),
     (1, 'kim','kim@kanye.com'),
     (2, 'DavidBowie','david@bowienet.com'),
   (3, 'HackerTDog','hackert@dog.com'),
@@ -15,12 +15,12 @@ insert into jabberuser (
 );
 
 insert into jab(
-    values(0, 0, 'MAGA!'),
-    (1, 0, 'SAD!'),
+    values(0, 0, 'Joker!'),
+    (1, 0, 'Gordan!'),
     (2, 1, 'uokhun'),
     (3, 2, 'My version of The Man Who Sold The World is way better'),
     (4, 3, 'WOOF!'),
-    (5, 0, 'covfefe'),
+    (5, 0, 'I am Bruce Wayne'),
     (6, 12, 'Ed Balls'),
     (7, 7, 'anybody watching that Gumball show?'),
     (8, 8, 'ice bear says We Bare Bears is the best show'),
