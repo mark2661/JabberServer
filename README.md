@@ -17,8 +17,12 @@ A multithreaded back-end server for "Jabber" a Twitter clone designed for a univ
 JabberServer/src/com/bham/fsd/assignments/jabberserver/StartServer.java
 ```
 ### Enter a new user name to register (or an existing user name to sign-in)
-![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/sign-in%20screen.PNG)
-![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/register%20success.PNG)
+| First Header  | Second Header |
+| ------------- | ------------- |
+| ![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/sign-in%20screen.PNG)  |![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/register%20success.PNG) |
+| Content Cell  | Content Cell  |
+
+
 ### Post a message to your timeline for your followers to see
 ![alt text](https://github.com/mark2661/JabberServer/blob/main/Images/post.PNG)
 ### Follow other users by clicking the "plus" icon next to their name
